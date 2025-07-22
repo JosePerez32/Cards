@@ -1,5 +1,5 @@
-// import { db } from './firebase-config.js';
-// import { collection, getDocs, orderBy, limit, query } from "firebase/firestore"; 
+import { db } from './firebase-config.js';
+import { collection, getDocs, orderBy, limit, query } from "firebase/firestore"; 
 const db = firebase.firestore();
 firebase.firestore.FieldValue.serverTimestamp();
 firebase.firestore.Timestamp;
