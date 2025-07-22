@@ -20,5 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = app.firestore();
 
-export { db };
+// export { db };
+// Hacer db disponible globalmente
+window.db = db;
 //const analytics = getAnalytics(app);

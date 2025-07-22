@@ -1,5 +1,8 @@
-import { db } from './firebase-config.js';
-import { collection, getDocs, orderBy, limit, query } from "firebase/firestore"; 
+// import { db } from './firebase-config.js';
+// import { collection, getDocs, orderBy, limit, query } from "firebase/firestore"; 
+const db = firebase.firestore();
+firebase.firestore.FieldValue.serverTimestamp()
+firebase.firestore.Timestamp
 // Datos de las tarjetas (puedes cargarlos desde un JSON)
 // Referencia a la colección de tarjetas
 const cardsRef = collection(db, "cards");
