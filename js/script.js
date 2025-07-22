@@ -13,7 +13,7 @@ async function loadCards(page = 1, cardsPerPage = 9) {
       // cardsRef, 
       // orderBy("createdAt"), 
       // limit(cardsPerPage)
-      collection(db, "Cards"), orderBy("createdAt")
+      collection(db, "cards"), orderBy("createdAt")
     );
     
     // const querySnapshot = await cardsRef
