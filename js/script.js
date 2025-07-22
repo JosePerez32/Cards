@@ -16,11 +16,13 @@ async function loadCards(page = 1, cardsPerPage = 9) {
       collection(db, "Cards"), orderBy("createdAt")
     );
     
-    const querySnapshot = await cardsRef
-      .orderBy("createdAt")
-      .limit(cardsPerPage)
-      .offset((page - 1) * cardsPerPage)
-      .get();
+    // const querySnapshot = await cardsRef
+    //   .orderBy("createdAt")
+    //   .limit(cardsPerPage)
+    //   .offset((page - 1) * cardsPerPage)
+    //   .get();
+    const querySnapshot = await getDocs(q);
+
     
     if (querySnapshot.empty) {
       cardsContainer.innerHTML = '<p>No hay tarjetas disponibles</p>';
