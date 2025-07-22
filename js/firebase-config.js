@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 // Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(app);
+//const db = firebase.firestore(app);
 
 // Hacer disponible para otros archivos
 //Esto lo hace global
