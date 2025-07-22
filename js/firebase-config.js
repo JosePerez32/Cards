@@ -16,4 +16,5 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore(app);
 
 // Hacer disponible para otros archivos
-window.db = db;
+//Esto lo hace global
+//window.db = db;
