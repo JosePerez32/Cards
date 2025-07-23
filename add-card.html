@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Tarjeta</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Agregar Nueva Tarjeta</h1>
+    <a href="index.html" class="back-button">← Volver</a>
+    
+    <form id="cardForm">
+      <!-- Campos del formulario (igual que antes) -->
+      <div class="form-group">
+        <label for="english">Verbo en inglés:</label>
+        <input type="text" id="english" required>
+      </div>
+      
+      <!-- ... otros campos ... -->
+      
+      <button type="submit">Guardar Tarjeta</button>
+    </form>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
