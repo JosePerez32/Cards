@@ -10,6 +10,38 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
+  <div class="add-card-form">
+    <h2>Agregar Nueva Tarjeta</h2>
+    <form id="cardForm">
+      <div class="form-group">
+        <label for="english">Verbo en inglés:</label>
+        <input type="text" id="english" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="spanish">Traducción:</label>
+        <input type="text" id="spanish" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="image">Imagen (ruta):</label>
+        <input type="text" id="image" value="imgs/">
+      </div>
+      
+      <div class="form-group">
+        <label for="audio">Audio (ruta):</label>
+        <input type="text" id="audio" value="audio/">
+      </div>
+      
+      <div class="form-group">
+        <label for="example">Ejemplo de uso:</label>
+        <textarea id="example" rows="2"></textarea>
+      </div>
+      
+      <button type="submit">Agregar Tarjeta</button>
+    </form>
+  </div>
+  <input type="file" id="imageUpload" accept="image/*">
   <div class="cards-container"></div>
   
   <div class="pagination">

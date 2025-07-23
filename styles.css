@@ -127,3 +127,57 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Parte de estilos para el formulario */
+.add-card-form {
+  background: #1e3a5c;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.add-card-form h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  color: #f1f1f1;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+button[type="submit"] {
+  background: #682fc4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 20px auto 0;
+}
+
+button[type="submit"]:hover {
+  background: #5a29a8;
+}
