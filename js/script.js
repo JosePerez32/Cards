@@ -46,12 +46,14 @@ if (isFormPage) {
     e.preventDefault();
     
     const cardData = {
+            audio: document.getElementById('audio').value,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+
       english: document.getElementById('english').value,
-      spanish: document.getElementById('spanish').value,
-      image: document.getElementById('image').value,
-      audio: document.getElementById('audio').value,
       example: document.getElementById('example').value,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      id: document.getElementById('id').value,
+      image: document.getElementById('image').value,
+      spanish: document.getElementById('spanish').value,
     };
     
     try {
