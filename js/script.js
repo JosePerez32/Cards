@@ -46,9 +46,8 @@ if (isFormPage) {
     e.preventDefault();
     
     const cardData = {
-            audio: document.getElementById('audio').value,
+      audio: document.getElementById('audio').value,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-
       english: document.getElementById('english').value,
       example: document.getElementById('example').value,
       id: document.getElementById('id').value,
