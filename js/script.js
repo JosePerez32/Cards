@@ -45,12 +45,12 @@ if (isFormPage) {
       snapshot.forEach(doc => {
         const card = doc.data();
         cardsHTML += `
-          <div class="card">
+           <div class="card">
             <div class="front">
               <div class="card-image">
-                <img src="${card.image || 'default.png'}" alt="${card.english}">
+                <img src="${card.image}" alt="${card.english}">
               </div>
-              <h1>${card.english}</h1>
+              <h1 class="${englishClass}">${card.english}</h1>
             </div>
             <div class="back">
               <h1>${card.spanish}</h1>
