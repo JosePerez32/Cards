@@ -24,11 +24,11 @@ body {
 }
 
 .card {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    cursor: pointer;
-    perspective: 1000px;
+  /* Mantén tus estilos existentes y agrega: */
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden; /* Evita que el contenido se salga */
 }
 
 .card div {
@@ -45,7 +45,18 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea contenido arriba */
+  padding-top: 20px; /* Espacio superior */
+}
 
+.front h1 {
+  margin-top: 10px;
+  position: relative; /* Asegura que esté sobre la imagen */
+  z-index: 1;
+}
 .card .front {
     background: #682fc4;
     transform: rotateY(0deg);
@@ -65,9 +76,12 @@ body {
 }
 
 .card-image {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
+  width: 210px;
+  height: 210px;
+  margin: 10px auto 0; /* 10px arriba, auto en lados */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-image img {
@@ -77,12 +91,28 @@ body {
 }
 
 .card h1 {
-    font-size: 24px; /* Reduje el tamaño para textos largos */
-    color: #f1f1f1;
-    margin-bottom: 10px;
-    text-align: center;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin: 10px 0;
+  padding: 0 10px;
+  word-break: break-word; /* Rompe palabras largas */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Mejor contraste */
 }
-
+/* Ajuste para texto que es demasiado largo */
+.card h1.long-text {
+  font-size: 20px;
+}
+.card .example {
+  font-size: 14px;
+  padding: 0 15px;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Máximo 3 líneas */
+  -webkit-box-orient: vertical;
+}
 .example {
     color: #f1f1f1;
     font-size: 16px;
@@ -187,11 +217,21 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #345B63;
+  padding: 15px 20px;
 }
-
+.add-button {
+  background: #682fc4;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.add-button:hover {
+  background: #5a29a8;
+  transform: scale(1.05);
+}
 .add-button, .back-button {
   background: #682fc4;
   color: white;

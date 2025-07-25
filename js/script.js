@@ -39,7 +39,8 @@ if (isFormPage) {
         cardsContainer.innerHTML = '<p>No hay tarjetas disponibles</p>';
         return;
       }
-      
+      const englishClass = card.english.length > 15 ? 'long-text' : '';
+
       let cardsHTML = '';
       snapshot.forEach(doc => {
         const card = doc.data();
