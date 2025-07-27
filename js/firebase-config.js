@@ -1,3 +1,4 @@
+import "https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js";
 // Import the functions you need from the SDKs you need
 
 // Configuración de Firebase
@@ -14,7 +15,9 @@ const firebaseConfig = {
 // Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
 //const db = firebase.firestore(app);
-
+const db = firebase.firestore(app);
+const auth = firebase.auth();
+export { db, auth };
 // Hacer disponible para otros archivos
 //Esto lo hace global
 //window.db = db;
