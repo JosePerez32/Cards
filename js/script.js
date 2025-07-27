@@ -1,4 +1,4 @@
-import { onAuthStateChanged } from 'auth.js';
+import { onAuthStateChanged } from './auth.js';
 // Configuración compartida
 const db = firebase.firestore();
 const cardsRef = db.collection("cards");
