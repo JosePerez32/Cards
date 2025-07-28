@@ -1,4 +1,4 @@
-import "https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js";
+
 // Import the functions you need from the SDKs you need
 
 // Configuración de Firebase
