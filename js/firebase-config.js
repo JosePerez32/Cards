@@ -15,7 +15,11 @@ const firebaseConfig = {
 // Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
 //const db = firebase.firestore(app);
-const db = firebase.firestore(app);
+const db = firebase.firestore();
+db.enablePersistence()
+  .catch((err) => {
+    console.log("Error en persistencia:", err);
+  });
 const auth = firebase.auth();
 export { db, auth };
 // Hacer disponible para otros archivos

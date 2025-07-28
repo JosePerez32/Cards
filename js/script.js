@@ -4,9 +4,12 @@ const db = firebase.firestore();
 const cardsRef = db.collection("cards");
 
 // Detectar si estamos en la página de formulario
-const isFormPage = document.getElementById('cardForm') !== null;
-onAuthStateChanged((isLoggedIn) => {
-  if (!isLoggedIn && window.location.pathname.includes('add-card.html')) {
+onAuthStateChanged((user) => {
+  if (user) {
+    // Usuario autenticado - cargar tarjetas
+    loadCards();
+  } else if (!window.location.pathname.includes('login.html')) {
+    // Redirigir a login si no está en la página de login
     window.location.href = 'login.html';
   }
 });
@@ -37,10 +40,12 @@ if (isFormPage) {
   // Lógica para página principal
   async function loadCards() {
     try {
+      console.log("Cargando tarjetas..."); // Debug
       const snapshot = await cardsRef.orderBy("createdAt").get();
       const cardsContainer = document.querySelector('.cards-container');
       
       if (snapshot.empty) {
+        console.log("No hay documentos"); // Debug
         cardsContainer.innerHTML = '<p>No hay tarjetas disponibles</p>';
         return;
       }
@@ -48,7 +53,8 @@ if (isFormPage) {
       let cardsHTML = '';
       snapshot.forEach(doc => {
         const card = doc.data();
-        const englishClass = card.english.length > 15 ? 'long-text' : '';
+        console.log("Tarjeta:", card); // Debug
+        //const englishClass = card.english.length > 15 ? 'long-text' : '';
         cardsHTML += `
            <div class="card">
             <div class="front">
@@ -71,7 +77,16 @@ if (isFormPage) {
       document.querySelector('.cards-container').innerHTML = '<p>Error cargando tarjetas</p>';
     }
   }
-
+// Verificar autenticación y cargar tarjetas
+onAuthStateChanged((user) => {
+  if (user) {
+    console.log("Usuario autenticado:", user.email);
+    loadCards();
+  } else if (!window.location.pathname.includes('login.html')) {
+    console.log("Redirigiendo a login...");
+    window.location.href = 'login.html';
+  }
+});
   // Inicializar
-  document.addEventListener('DOMContentLoaded', loadCards);
+  //document.addEventListener('DOMContentLoaded', loadCards);
 }
