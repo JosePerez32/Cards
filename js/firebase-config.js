@@ -17,12 +17,7 @@ const app = firebase.initializeApp(firebaseConfig);
 //const db = firebase.firestore(app);
 const db = firebase.firestore(app);
 // Habilita persistencia de datos (opcional pero útil)
-db.enablePersistence()
-  .catch((err) => {
-    console.log("Error en persistencia:", err);
-  });
-const auth = firebase.auth();
-export { db, auth };
+
 // Hacer disponible para otros archivos
 //Esto lo hace global
 //window.db = db;
