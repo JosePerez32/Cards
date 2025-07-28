@@ -1,15 +1,10 @@
-import { onAuthStateChanged } from './auth.js';
+
 // Configuración compartida
 const db = firebase.firestore();
 const cardsRef = db.collection("cards");
 
 // Detectar si estamos en la página de formulario
 const isFormPage = document.getElementById('cardForm') !== null;
-onAuthStateChanged((isLoggedIn) => {
-  if (!isLoggedIn && window.location.pathname.includes('add-card.html')) {
-    window.location.href = 'login.html';
-  }
-});
 if (isFormPage) {
   // Lógica para página de formulario
   document.getElementById('cardForm').addEventListener('submit', async (e) => {
