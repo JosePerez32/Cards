@@ -15,7 +15,6 @@ const firebaseConfig = {
 // Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
 //const db = firebase.firestore(app);
-const db = firebase.firestore(app);
 // Habilita persistencia de datos (opcional pero útil)
 
 // Hacer disponible para otros archivos
