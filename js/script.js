@@ -102,5 +102,16 @@ if (isFormPage) {
   }
 
   // Inicializar
-  document.addEventListener('DOMContentLoaded', loadCards);
+  document.addEventListener('DOMContentLoaded', () => {
+    pageSnapshots = [];
+    lastVisible = null;
+    firstVisible = null;
+    loadCards(1, 'next');
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+      if (currentPage > 1) loadCards(currentPage - 1, 'prev');
+    });
+    document.querySelector('.next-btn').addEventListener('click', () => {
+      loadCards(currentPage + 1, 'next');
+    });
+  });
 }
