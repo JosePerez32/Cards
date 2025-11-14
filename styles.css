@@ -6,13 +6,20 @@
 }
 
 body {
-    background: #112031;
+    /* background: #112031; */
+        /* background: red !important; */
+ url('https://picsum.photos/1920/1080');
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    /* background-image: url(/background.png); */
+     background: #112031;
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .cards-container {
@@ -45,9 +52,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.h1 {
-  
-}
+
 .front {
   display: flex;
   flex-direction: column;
@@ -61,12 +66,12 @@ body {
   z-index: 1;
 }
 .card .front {
-    background: #682fc4;
+    background: #64e253;
     transform: rotateY(0deg);
 }
 
 .card .back {
-    background: #345B63;
+    background: #55d2eb;
     transform: rotateY(180deg);
 }
 
@@ -132,7 +137,7 @@ body {
 
 .pagination button {
     padding: 8px 16px;
-    background: #682fc4;
+    /* background: #682fc4; */
     color: white;
     border: none;
     border-radius: 5px;
@@ -200,7 +205,7 @@ body {
 }
 
 button[type="submit"] {
-  background: #682fc4;
+  background: #d1ce0b;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -212,7 +217,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: #5a29a8;
+  background: #32b0eb;
 }
 
 /* Estilos para el header y botones */
@@ -223,7 +228,7 @@ header {
   padding: 15px 20px;
 }
 .add-button {
-  background: #682fc4;
+  background: #921577;
   color: white;
   padding: 8px 15px;
   border-radius: 20px;
@@ -232,11 +237,11 @@ header {
   transition: all 0.3s ease;
 }
 .add-button:hover {
-  background: #5a29a8;
+  background: #9d77da;
   transform: scale(1.05);
 }
 .add-button, .back-button {
-  background: #682fc4;
+  background: #0f9e86;
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
@@ -245,7 +250,7 @@ header {
 }
 
 .add-button:hover, .back-button:hover {
-  background: #5a29a8;
+  background: #31ad21;
 }
 
 .form-container {

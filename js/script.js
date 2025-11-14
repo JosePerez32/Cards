@@ -40,7 +40,7 @@ if (isFormPage) {
     try {
       let query = cardsRef.orderBy("createdAt").limit(pageSize);
       
- if (direction === 'next' && lastVisible) {
+    if (direction === 'next' && lastVisible) {
       query = query.startAfter(lastVisible);
     } else if (direction === 'prev' && firstVisible && pageSnapshots.length > 1) {
       // Retrocede una página: elimina la última página y usa el último doc de la anterior
