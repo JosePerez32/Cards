@@ -59,20 +59,30 @@ body {
   justify-content: flex-start; /* Alinea contenido arriba */
   padding-top: 20px; /* Espacio superior */
 }
-
+h1{
+  font-size: 24px;
+  color: #ecbc1c;
+  text-align: center;
+  margin: 10px 0;
+  padding: 0 10px;
+  word-break: break-word; /* Rompe palabras largas */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Mejor contraste */
+}
 .front h1 {
   margin-top: 10px;
   position: relative; /* Asegura que esté sobre la imagen */
   z-index: 1;
 }
 .card .front {
-    background: #64e253;
+    /* Transparencia */
+    background: rgba(255, 255, 255, 0.05);
     transform: rotateY(0deg);
 }
-
 .card .back {
-    background: #55d2eb;
+    background: #1f3450;
     transform: rotateY(180deg);
+
+    
 }
 
 .card:hover .front {
@@ -100,12 +110,21 @@ body {
 
 .card h1 {
   font-size: 24px;
-  color: #fff;
+  color: rgb(216, 189, 38);
   text-align: center;
   margin: 10px 0;
   padding: 0 10px;
-  word-break: break-word; /* Rompe palabras largas */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Mejor contraste */
+  word-break: break-word;
+  text-shadow: 
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000; /* Borde negro completo */
 }
 /* Ajuste para texto que es demasiado largo */
 .card h1.long-text {
@@ -122,7 +141,7 @@ body {
   -webkit-box-orient: vertical;
 }
 .example {
-    color: #f1f1f1;
+    color: #dfd987;
     font-size: 16px;
     text-align: center;
     margin-top: 15px;
@@ -138,19 +157,19 @@ body {
 .pagination button {
     padding: 8px 16px;
     /* background: #682fc4; */
-    color: white;
+    color: rgb(41, 43, 139);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .pagination button:disabled {
-    background: #cccccc;
+    background: #e8f380;
     cursor: not-allowed;
 }
 
 .page-number {
-    color: white;
+    color: rgb(37, 43, 68);
     font-size: 18px;
 }
 
@@ -167,12 +186,14 @@ body {
 }
 /* Parte de estilos para el formulario */
 .add-card-form {
+  position: absolute;
   background: #1e3a5c;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
   max-width: 600px;
   width: 100%;
+  z-index: 1000;
 }
 
 .add-card-form h2 {
@@ -206,7 +227,7 @@ body {
 
 button[type="submit"] {
   background: #d1ce0b;
-  color: white;
+  color: rgb(25, 31, 65);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -228,33 +249,97 @@ header {
   padding: 15px 20px;
 }
 .add-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   background: #921577;
-  color: white;
+  color: rgb(48, 58, 92);
   padding: 8px 15px;
   border-radius: 20px;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
+  align-self: self-end;
+    z-index: 1000;
 }
 .add-button:hover {
   background: #9d77da;
   transform: scale(1.05);
 }
 .add-button, .back-button {
-  background: #0f9e86;
-  color: white;
+  background: #6218b6;
+  color: rgb(245, 248, 72);
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
 }
-
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #f5c242;
+  color: #232323;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
 .add-button:hover, .back-button:hover {
-  background: #31ad21;
+  background: #f3ff87;
+  color: #351c91;
 }
 
 .form-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+}
+/* Estilos para autenticación */
+.auth-btn {
+  background: #682fc4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.auth-btn:hover {
+  background: #5a29a8;
+}
+
+/* Modal de login */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #1e3a5c;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: white;
 }

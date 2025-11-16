@@ -10,15 +10,39 @@
   <!-- Firebase SDK (versión compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
 </head>
 <body>
   <header>
-    <h1>Mis Tarjetas en Inglés</h1>
-    <a href="add-card.html" class="add-button">+ Agregar Nueva</a>
+    <h1>Mis Tarjetas de Inglés</h1>
+    <div id="auth-buttons">
+      <button id="login-btn" class="auth-btn">Iniciar Sesión</button>
+      <button id="logout-btn" class="auth-btn" style="display:none;">Cerrar Sesión</button>
+      <a href="add-card.html" id="add-card-link" class="add-button" style="display:none;">+ Agregar Nueva</a>
+    </div>
   </header>
   
   <div class="cards-container"></div>
   
+  <!-- Modal de Login -->
+  <div id="login-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
   <div class="pagination">
     <button class="prev-btn">Anterior</button>
     <span class="page-number">Página 1</span>
@@ -27,5 +51,6 @@
 
   <script src="js/firebase-config.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 </html>

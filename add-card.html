@@ -7,46 +7,52 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
 </head>
 <body>
-  <title>Agregar Tarjeta</title>
-  <div class="form-container">
-      
-    <h1>Agregar Nueva Tarjeta</h1>
-    <a href="index.html" class="back-button">← Volver</a>
-    
-    <form id="cardForm">
-      <!-- Campos del formulario (igual que antes) -->
-      <div class="form-group">
-        <label for="english">Verbo en inglés:</label>
-        <input type="text" id="english" required>
+    <div id="app">
+      <title>Agregar Tarjeta</title>
+      <div class="form-container">
+          
+        <h1>Agregar Nueva Tarjeta</h1>
+        <a href="index.html" class="back-button">← Volver</a>
+        
+        <form id="cardForm">
+          <!-- Campos del formulario (igual que antes) -->
+          <div class="form-group">
+            <label for="english">Verbo en inglés:</label>
+            <input type="text" id="english" required>
+          </div>
+          
+          <!-- ... otros campos ... -->
+          <div class="form-group">
+            <label for="spanish">Traducción:</label>
+            <input type="text" id="spanish" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="image">Imagen (ruta):</label>
+            <input type="text" id="image" value="imgs/">
+          </div>
+          
+          <div class="form-group">
+            <label for="audio">Audio (ruta):</label>
+            <input type="text" id="audio" value="audio/">
+          </div>
+          
+          <div class="form-group">
+            <label for="example">Ejemplo de uso:</label>
+            <textarea id="example" rows="2"></textarea>
+          </div>
+          <button type="submit">Guardar Tarjeta</button>
+        </form>
       </div>
-      
-      <!-- ... otros campos ... -->
-       <div class="form-group">
-        <label for="spanish">Traducción:</label>
-        <input type="text" id="spanish" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="image">Imagen (ruta):</label>
-        <input type="text" id="image" value="imgs/">
-      </div>
-      
-      <div class="form-group">
-        <label for="audio">Audio (ruta):</label>
-        <input type="text" id="audio" value="audio/">
-      </div>
-      
-      <div class="form-group">
-        <label for="example">Ejemplo de uso:</label>
-        <textarea id="example" rows="2"></textarea>
-      </div>
-    
-      <button type="submit">Guardar Tarjeta</button>
-    </form>
+    </div>
+  <div id="login-required" style="display:none; text-align:center; padding:50px;">
+    <h2>Acceso Restringido</h2>
+    <p>Debes iniciar sesión para agregar tarjetas.</p>
+    <a href="index.html" class="auth-btn">Volver al Inicio</a>
   </div>
-
   <script src="js/firebase-config.js"></script>
   <script src="js/script.js"></script>
 </body>

@@ -3,6 +3,41 @@
 const db = firebase.firestore();
 const cardsRef = db.collection("cards");
 
+async function loadCards() {
+  try {
+    const snapshot = await cardsRef.orderBy("createdAt").get();
+    const cardsContainer = document.querySelector('.cards-container');
+    
+    if (snapshot.empty) {
+      cardsContainer.innerHTML = '<p>No hay tarjetas disponibles</p>';
+      return;
+    }
+    
+    let cardsHTML = '';
+    snapshot.forEach(doc => {
+      const card = doc.data();
+      cardsHTML += `
+        <div class="card">
+          <div class="front">
+            <div class="card-image">
+              <img src="${card.image || 'default.png'}" alt="${card.english}">
+            </div>
+            <h1>${card.english}</h1>
+            <button class="audio-btn">🔊</button>
+          </div>
+          <div class="back">
+            <h1>${card.spanish}</h1>
+            <p class="example">${card.example || ''}</p>
+          </div>
+        </div>
+      `;
+    });
+    
+    cardsContainer.innerHTML = cardsHTML;
+  } catch (error) {
+    console.error("Error al cargar tarjetas:", error);
+  }
+}
 // Detectar si estamos en la página de formulario
 const isFormPage = document.getElementById('cardForm') !== null;
 if (isFormPage) {
